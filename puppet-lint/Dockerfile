@@ -14,10 +14,13 @@ RUN wget https://apt.puppetlabs.com/puppetlabs-release-pc1-jessie.deb && \
     rm puppetlabs-release-pc1-jessie.deb
 
 # Install Puppet
-RUN apt-get update -y && apt-get install -y puppet
+RUN apt-get update -y && apt-get install -y puppet-agent
+RUN ln -fs /opt/puppetlabs/puppet/bin/puppet /usr/bin/puppet
+RUN ln -fs /opt/puppetlabs/puppet/bin/facter /usr/bin/facter
 
 # Install puppet-lint
-RUN gem install puppet-lint
+RUN /opt/puppetlabs/puppet/bin/gem install puppet-lint
+RUN ln -fs /opt/puppetlabs/puppet/bin/puppet-lint /usr/bin/puppet-lint
 
 # Clean up unneeded directories
 RUN rm -rf /var/lib/apt/lists/*
