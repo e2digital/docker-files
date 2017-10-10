@@ -4,8 +4,10 @@ FROM tetraweb/php:7.0
 RUN apt-get update -y && apt-get install -y \
     unzip \
     libfontconfig \
-    php5-intl \
+    libicu-dev \
     jq
+
+RUN docker-php-ext-install intl
 
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 RUN php composer-setup.php
