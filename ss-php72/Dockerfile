@@ -10,7 +10,8 @@ RUN apt-get update -y && apt-get install -y \
     libicu-dev \
     libzip-dev \
     unzip \
-    zip
+    zip \
+    rsync
 
 RUN docker-php-ext-install intl zip
 
