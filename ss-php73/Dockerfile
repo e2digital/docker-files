@@ -3,6 +3,7 @@ FROM brettt89/silverstripe-web:7.3
 # Update and Install Packages
 RUN apt-get update -y && apt-get install -y \
     gnupg \
+    jq \
     rsync
 
 # Install Composer

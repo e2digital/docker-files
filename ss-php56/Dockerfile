@@ -4,6 +4,7 @@ FROM brettt89/silverstripe-web:5.6
 RUN apt-get update -y && apt-get install -y \
     apt-transport-https \
     gnupg \
+    jq \
     rsync
 
 # Install Composer
