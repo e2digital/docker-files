@@ -4,7 +4,8 @@ FROM brettt89/silverstripe-web:7.2
 RUN apt-get update -y && apt-get install -y \
     gnupg \
     jq \
-    rsync
+    rsync \
+    openssh-client
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php \
