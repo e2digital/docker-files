@@ -6,6 +6,7 @@ RUN apt-get update -y && apt-get install -y \
     jq \
     rsync \
     openssh-client \
+    git
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php \
